@@ -33,7 +33,7 @@ def pred(usermoviereview):
 # webapp
 app = Flask(__name__, template_folder='./')
 
-@app.route('/prediction', methods=['POST', 'GET'])
+@app.route('/cargar_csv', methods=['POST', 'GET'])
 def prediction():
     if request.method == "POST":
         message = request.form['message']
