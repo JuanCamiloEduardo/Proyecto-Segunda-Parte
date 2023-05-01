@@ -1,14 +1,73 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Upload</title>
+	<title>Analisis de sentimientos</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 50px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		form {
+			margin: auto;
+			max-width: 800px;
+			height: 200px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			margin-top: 50px;
+		}
+		input[type="submit"] {
+			background-color: #007bff;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			margin-top: 20px;
+			width: 100%;
+			border-radius: 5px;
+			transition: all 0.3s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #0069d9;
+		}
+		.logo {
+			width: 150px;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+	</style>
 </head>
 <body>
-	<p1>
-		Write movie review
-	</p1>
-<form method=POST action="{{ url_for('prediction') }}">
-    <input type=text name="message" value="" maxlength="100">
-    <input type="submit" value="Submit" >
-</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<img class="logo" src="https://uniandes.edu.co/sites/default/files/logo-uniandes.png" alt="Universidad de Los Andes logo">
+			</div>
+			<div class="col-md-10">
+				<h1>Análisis de Sentimientos</h1>
+			</div>
+		</div>
+		<form method="POST" action="{{ url_for('prediction') }}" class="form-group">
+			<label for="movie-review">Escriba la reseña de película</label>
+			<input type="text" name="message" class="form-control" placeholder="Reseña">
+			<input type="submit" value="Enviar">
+		</form method="POST" action="{{ url_for('cargar_csv') }}" class="form-group" >
+			<a href="/cargar_csv" class="btn btn-primary">Archivo de prueba</a>
+		</form>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

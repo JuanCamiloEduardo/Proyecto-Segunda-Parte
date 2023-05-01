@@ -25,9 +25,9 @@ def pred(usermoviereview):
     sentiment = loaded_model.predict(review_tokens_pad)
     print(sentiment)
     if sentiment[0] > 0.5:
-        sentiment_str = "You like the movie:" + "{0:.2%}".format(float(sentiment[0]))
+        sentiment_str = "You like the movie".format(float(sentiment[0]))
     else:
-        sentiment_str = "You didn't like the movie:" + "{0:.2%}".format(float(sentiment[0]))
+        sentiment_str = "You didn't like the movie".format(float(sentiment[0]))
     return sentiment_str
 
 # webapp
